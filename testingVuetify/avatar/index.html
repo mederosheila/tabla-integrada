@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main class="text-center" mt-5>
+          <v-card max-width="500" class="mx-auto">
+            <v-toolbar color="red darken-1 white--text">
+              <v-app-bar-nav-icon></v-app-bar-nav-icon>
+              <v-tollbar-title>users</v-tollbar-title>
+              <v-spacer></v-spacer>
+              <v-btn-icon>
+                <v-icon>mdi-magnify</v-icon>
+              </v-btn-icon>
+              <v-btn-icon>
+                <v-icon>mdi-dots-vertical</v-icon>
+              </v-btn-icon>
+            </v-toolbar>
+              <v-list>
+                <v-list-item v-for="user in users" :key="user.name" @click="">
+                <v-list-item-content>
+                    <v-list-item-title v-text="user.name"></v-list-item-title>
+                </v-list-item-content>
+                <v-list-item-avatar>
+                  <v-img :src="user.avatar" max-width="50" size="50"></v-img>
+                    
+                </v-list-item-avatar>  </v-list-item>
+              </v-list>
+          </v-card>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data(){
+          return{
+              users:[
+                  {
+                    name:"Jason Oner", avatar:"https://cdn.vuetifyjs.com/images/lists/1.jpg"
+                  },
+                  {
+                    name:"Travis Howard", avatar:"https:cdn.vuetifyjs.com/images/lists/2.jpg"
+                  },
+                  {
+                    name:"Ali Connors", avatar:"https:cdn.vuetifyjs.com/images/lists/3.jpg"
+                  },
+                  {
+                    name:"Cindy Baker", avatar:"https:cdn.vuetifyjs.com/images/lists/4.jpg"
+                  }
+              ]
+          }
+      }
+     
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main class="mt-10 mx-auto text-center">
+         <h3>Basic Card</h3>
+         <v-card class="mt-5 "width="500">
+             <v-img height="200" class="white--text align-end" src="https://shop.line-scdn.net/themeshop/v1/products/75/73/c7/7573c775-acc7-4407-8ff5-b023270d76d6/100/WEBSTORE/icon_198x278.png">
+                <v-card-title>
+                Play Now
+                </v-card-title>
+             </v-img>
+             <v-scard-subtitle>New Game</v-scard-subtitle>
+             <v-card-text class="text--primary">
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, saepe?
+                </div> 
+                <div>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, molestias.
+                </div>
+                
+            </v-card-text>
+             <v-card-actions>
+                 <v-btn class="cyan darken-2" dark>Start</v-btn>
+                 <v-btn class="teal darken-2" dark>Exit</v-btn>
+             </v-card-actions>
+         </v-card>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="vue.js"></script>
+</body>
+</html>

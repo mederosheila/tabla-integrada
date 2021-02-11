@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-main>
+          <v-card class="mx-auto mt-5" max-width="900">
+            <v-card-title>Stock <v-btn @click="dialog1 = true" class="mx-2 teal lighten-2 white--text" :elevation="10"><v-icon>mdi-plus</v-icon></v-btn></v-card-title>
+          <v-data-table
+          :headers="columns"
+          :items="users"
+          class="elevation-19">
+
+          </v-data-table>
+          </v-card>
+          
+        <v-dialog v-model="dialog1" width="500">
+          <v-card>
+            <v-card-title class="green lighten-2 white--text">New User</v-card-title>
+            <v-card-text>
+              <template>
+                     <v-form v-model="valid">
+                         <v-container>
+                          <v-row>
+                            <v-col
+                              cols="12"
+                              md="4"
+                             >
+                               <v-text-field
+                                 v-model="firstname"
+                                 :rules="nameRules"
+                                 :counter="10"
+                                  label="First name"
+                                   required
+                                ></v-text-field>
+                                 </v-col>
+
+                                 <v-col
+                                 cols="12"
+                                  md="4"
+                                  >
+                                <v-text-field
+                                 v-model="lastname"
+                                :rules="nameRules"
+                                :counter="10"
+                                label="Last name"
+                                required
+                               ></v-text-field>
+                                </v-col>
+
+                                <v-col
+                                cols="12"
+                                md="4"
+                                >
+                              <v-text-field
+                              v-model="email"
+                              :rules="emailRules"
+                              label="E-mail"
+                              required
+                              ></v-text-field>
+                              </v-col>
+                              </v-row>
+                              </v-container>
+                              </v-form>
+                              </template>
+                              <v-card-title>
+                               New User Data
+                           </v-card-title>
+                           </v-card-text>
+                        <v-divider></v-divider>
+                  <v-card-actions>
+              <v-btn @click="dialog1 = false">Close</v-btn>
+              <v-btn @click="createUser(index)" class="btn btn-success">Save</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-main>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script src="vue.js"></script>
+  <script src="modal.js"></script>
+</body>
+</html>
